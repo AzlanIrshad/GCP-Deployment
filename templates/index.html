@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+    <form method="post">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" step="any" required>
+        <br>
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" step="any" required>
+        <br>
+        <label>Operator:</label>
+        <input type="radio" id="add" name="operator" value="add" required>
+        <label for="add">Add</label>
+        <input type="radio" id="subtract" name="operator" value="subtract">
+        <label for="subtract">Subtract</label>
+        <input type="radio" id="multiply" name="operator" value="multiply">
+        <label for="multiply">Multiply</label>
+        <input type="radio" id="divide" name="operator" value="divide">
+        <label for="divide">Divide</label>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
