@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-deploy
+  namespace: helm
+  labels:
+    app: webapp
+spec:
+  template:
+    metadata:
+      name: helm-deploy
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: helm-deploy
+        image: azlanirshad/helm:cal
+  replicas: 3
+  selector:
+    matchLabels:
+        app: webapp
